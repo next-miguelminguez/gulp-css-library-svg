@@ -1,0 +1,128 @@
+body {
+  background-color: #f1f1f1;
+}
+
+.icon-test {
+  width: 4em;
+  height: 4em;
+
+  border: 2px solid grey;
+  color: orange;
+  /*display: block;*/
+}
+
+
+/* CSS library for dictionaries SVG  */
+.item--shadow {
+  -webkit-filter: drop-shadow(2px 2px 0px red);
+  filter: drop-shadow(2px 2px 0px red);
+}
+.item--fill {
+  fill: #b3b3b3 !important;
+}
+
+/* https://codepen.io/chriscoyier/pen/dvjhn */
+/* https://css-tricks.com/using-svg/ */
+
+/* https://useiconic.com/ */
+  /* https://webdesign.tutsplus.com/es/articles/manipulating-svg-icons-with-simple-css--webdesign-15694 */
+/* https://www.heroicons.com/ */
+
+
+
+/*
+
+Recursos
+https://css-tricks.com/svg-sprites-use-better-icon-fonts/
+https://fvsch.com/svg-icons/     !!!!!buena
+
+
+https://svgontheweb.com/   !!! tutorial
+
+Extraer css
+https://github.com/adnantopal/extractcss/blob/master/lib/extractcss.js
+
+
+*/
+
+
+.item__text {
+  animation: hideshow 3s ease;
+}
+
+
+@keyframes hideshow {
+  0% { opacity: 0; }
+  60% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+.kaboom-letter path{
+  animation: kaboom 2s ease alternate infinite;
+}
+  .kaboom-letter path:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .kaboom-letter path:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .kaboom-letter path:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .kaboom-letter path:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+@keyframes kaboom {
+  90% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+
+
+
+/* default style ???*/
+
+/**
+ * Visually hidden accessible label
+ * Using styles that do not hide the text in screen readers
+ * We use !important because we should not apply other styles to this hidden alternative text
+ */
+.access-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/**
+ * Default icon style
+ */
+.icon {
+  /* Use the current text color as the icon’s fill color. */
+  fill: currentColor;
+  /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+  width: 1em;
+  height: 1em;
+  /* The default vertical-align is `baseline`, which leaves a few pixels of space below the icon. Using `center` prevents this. For icons shown alongside text, you may want to use a more precise value, e.g. `vertical-align: -4px` or `vertical-align: -0.15em`. */
+  vertical-align: middle;
+  /* Paths and strokes that overflow the viewBox can show in IE11. */
+  overflow: hidden;
+}
+
+
+
+.icon-goldstar {
+  fill: gold;
+  stroke: coral;
+  stroke-width: 5%;
+  stroke-linejoin: round;
+}

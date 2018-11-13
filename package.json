@@ -1,0 +1,21 @@
+{
+  "name": "gulp-svg-to-spritesymbols",
+  "version": "0.1.0",
+  "description": "Convierte los SVG de un directorio en un sprite SVG de symbols",
+  "main": "gulpfile.js",
+  "author": "Miguel Mínguez Mazón <miguel.minguez.next@bbva.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beeva-miguelminguez/gulp-css-library-svg"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgo": "^1.5.4"
+  }
+}
