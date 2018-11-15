@@ -8,41 +8,64 @@
   <link href="../src/init.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <h2>origen</h2>
-  <img class="icon-test " src="../src/svg/BBVAESMMXXX.svg" alt="">
-  <h2>destino</h2>
-  <img class="icon-test " src="../build/svg/BBVAESMMXXX.svg" alt="">
-
-  <h3>Object</h3>
-  <object class="icon-test " type="image/svg+xml" data="../build/svg/BBVAESMMXXX.svg">Your browser does not support SVGs</object>
-  <h3>embed</h3>
-  <embed class="icon-test " type="image/svg+xml" src="../build/svg/BBVAESMMXXX.svg" />
-
-  <h3>incluido</h3>
-
-  <svg  class="icon-test " id="logo-bbva" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <title>Logo BBVA</title>
-    <g id="BBVAESMMXXX" class="logo__background">
-      <path d="M21.81,20.85,5.83,5A15,15,0,0,0,7.13,28.09l14.65-7.22,0,0Z" style="fill:#1765a0"/>
-      <path  d="M16,1A14.93,14.93,0,0,0,5.83,5l16,15.86h0l5-2.47,4.15-2v0c0-.12,0-.23,0-.35A15,15,0,0,0,16,1Z" style="fill:#0c457f"/>
-      <path d="M21.82,20.86l0,0L7.13,28.09a15,15,0,0,0,19.94-2l0,0Z" style="fill:#1f355c"/>
-      <path d="M21.82,20.86l5.27,5.23A14.92,14.92,0,0,0,31,16.36l-4.15,2Z" style="fill:#1b2542"/>
-    </g>
-    <g id="Logo_BBVA" data-name="Logo BBVA" class="logo__content _kaboom-letter item__text item--shadow">
-      <path id="Fill-9" d="M7.69,15.54l.58-.81a.87.87,0,0,0,.12-.46.79.79,0,0,0-.81-.81H6.77v5h.46a1.31,1.31,0,0,0,1.38-1.5,1.39,1.39,0,0,0-.92-1.38M8,19.35H5.15V12.65H8a1.32,1.32,0,0,1,1.15,2.19l-.35.46c2.42,1.15,1.62,4-.81,4"    class=" item--fill" />
-      <path id="Fill-7" d="M13.35,15.54l.58-.81a.87.87,0,0,0,.12-.46.79.79,0,0,0-.81-.81h-.81v5h.46a1.31,1.31,0,0,0,1.38-1.5,1.39,1.39,0,0,0-.92-1.38m.35,3.81H10.81V12.65h2.88a1.32,1.32,0,0,1,1.15,2.19l-.35.46c2.42,1.15,1.62,4-.81,4" style="fill:#f9f9f9"   class=" item--fill"/>
-      <path id="Fill-11" d="M20.38,12.65h1l-2.08,6.69H17.73l-2.19-6.69h1.15c.46,0,.58.12.81.92l1.27,4.27Z" style="fill:#f9f9f9"/>
-      <path id="Fill-13" d="M22.46,16.92l.92-3.12.92,3.12Zm2.31-3.58c-.23-.58-.35-.69-.81-.69H22.69l-2.08,6.69h1l.46-1.5h2.42l.46,1.5h1.85Z" style="fill:#f9f9f9"/>
-
-    </g>
+  <svg width="0" height="0">
+    <defs>
+      <mask id="nxt-mask--circle">
+        <!-- Everything under a white pixel will be visible -->
+        <circle cx="28" cy="28" r="28"  fill="white" />
+        <!-- Everything under a black pixel will be invisible -->
+        <circle cx="28" cy="28" r="0"  fill="black" />
+      </mask>
+      <clipPath id="nxt-clip--circle">
+        <circle cx="28" cy="28" r="28" />
+        <circle cx="14" cy="14" r="14" />
+      </clipPath>
+    </defs>
   </svg>
+  <h2>img origen</h2>
+  <img class="icon-test " src="../src/svg/abc-smbl.svg" alt="">
+  <h2>img destino</h2>
+  <img class="icon-test " src="../build/svg/abc-smbl--svgmin.svg" alt="">
+
+  <h3>svg Object</h3>
+  <object class="icon-test " type="image/svg+xml" data="../build/svg/abc-smbl--svgmin.svg">Your browser does not support SVGs</object>
+  <h3>svg Embed</h3>
+  <embed class="icon-test " type="image/svg+xml" src="../build/svg/abc-smbl--svgmin.svg" />
+
+  <h3>SVG incluido</h3>
 
 
-
-
-
-
-
+  <!-- Replace -->
+  <svg class="icon-test " viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+      <g class="abc" fill="none" fill-rule="evenodd">
+          <g class="nxt-svg__bg--circle">
+              <path class="Path" fill="#1765A0" d="M39 37.053L0 0v56l38.944-18.91z"/>
+              <path d="M28.019.005C23.06-.002 13.72-.002 0 .005L38.909 38l9.34-4.725L56 29.448V.005c-13.696.007-23.023.007-27.981 0z" class="Path" fill="#0C457F"/>
+              <path class="Path" fill="#1F355C" d="M38.864 37L0 56h56v-1.998z"/>
+              <path class="Path" fill="#1B2542" d="M39 37.192L56 54V29z"/>
+          </g>
+          <g class="nxt__content" fill="#F9F9F9" fill-rule="nonzero">
+              <g class="nxt-svg__goldstar">
+                  <path d="M9.465 43.051l1.247-1.69c.177-.29.266-.622.258-.96a1.622 1.622 0 0 0-.497-1.207c-.33-.32-.78-.494-1.245-.482H7.485v10.431h.99c.85.053 1.679-.269 2.255-.877a2.679 2.679 0 0 0 .714-2.252c.067-1.278-.737-2.448-1.98-2.88M10.132 51H4V37.022h6.131c1.177-.145 2.322.434 2.873 1.452a2.689 2.689 0 0 1-.398 3.117l-.753.96c5.206 2.399 3.485 8.345-1.743 8.345" class="b1"/>
+                  <path d="M22.433 43.016l1.24-1.68c.175-.289.264-.62.257-.954a1.612 1.612 0 0 0-.495-1.2 1.718 1.718 0 0 0-1.238-.48h-1.732v10.37h.984a2.848 2.848 0 0 0 2.242-.872 2.663 2.663 0 0 0 .71-2.24c.067-1.27-.733-2.433-1.968-2.862M23.18 51H17V37.022h6.16c1.17-.144 2.308.431 2.856 1.443a2.673 2.673 0 0 1-.396 3.099l-.75.954c5.177 2.385 3.466 8.295-1.732 8.295" class="b2"/>
+                  <path d="M37.774 37H40l-4.63 14h-3.495L27 37h2.56c1.024 0 1.291.251 1.803 1.925l2.827 8.936L37.774 37z" class="V"/>
+                  <path d="M42.184 45.936l2.08-6.53 2.082 6.53h-4.162zm5.225-7.492C46.889 37.23 46.617 37 45.577 37h-2.873L38 51h2.262l1.04-3.139h5.473L47.815 51H52l-4.591-12.556z" class="Fill-a"/>
+              </g>
+              <g class="nxt-svg--shadow">
+                  <path d="M9.465 27.051l1.247-1.69c.177-.29.266-.622.258-.96a1.622 1.622 0 0 0-.497-1.207c-.33-.32-.78-.494-1.245-.482H7.485v10.431h.99c.85.053 1.679-.269 2.255-.877a2.679 2.679 0 0 0 .714-2.252c.067-1.278-.737-2.448-1.98-2.88M10.132 35H4V21.022h6.131c1.177-.145 2.322.434 2.873 1.452a2.689 2.689 0 0 1-.398 3.117l-.753.96c5.206 2.399 3.485 8.345-1.743 8.345" class="b1"/>
+                  <path d="M22.433 27.016l1.24-1.68c.175-.289.264-.62.257-.954a1.612 1.612 0 0 0-.495-1.2 1.718 1.718 0 0 0-1.238-.48h-1.732v10.37h.984a2.848 2.848 0 0 0 2.242-.872 2.663 2.663 0 0 0 .71-2.24c.067-1.27-.733-2.433-1.968-2.862M23.18 35H17V21.022h6.16c1.17-.144 2.308.431 2.856 1.443a2.673 2.673 0 0 1-.396 3.099l-.75.954c5.177 2.385 3.466 8.295-1.732 8.295" class="b2"/>
+                  <path d="M37.774 21H40l-4.63 14h-3.495L27 21h2.56c1.024 0 1.291.251 1.803 1.925l2.827 8.936L37.774 21z" class="V"/>
+                  <path d="M42.184 29.936l2.08-6.53 2.082 6.53h-4.162zm5.225-7.492C46.889 21.23 46.617 21 45.577 21h-2.873L38 35h2.262l1.04-3.139h5.473L47.815 35H52l-4.591-12.556z" class="Fill-a"/>
+              </g>
+              <g class="nxt-svg__linear">
+                  <path d="M9.465 11.051l1.247-1.69c.177-.29.266-.622.258-.96a1.622 1.622 0 0 0-.497-1.207c-.33-.32-.78-.494-1.245-.482H7.485v10.431h.99c.85.053 1.679-.269 2.255-.877a2.679 2.679 0 0 0 .714-2.252c.067-1.278-.737-2.448-1.98-2.88M10.132 19H4V5.022h6.131c1.177-.145 2.322.434 2.873 1.452a2.689 2.689 0 0 1-.398 3.117l-.753.96c5.206 2.399 3.485 8.345-1.743 8.345" class="b1"/>
+                  <path d="M22.433 11.016l1.24-1.68c.175-.289.264-.62.257-.954a1.612 1.612 0 0 0-.495-1.2 1.718 1.718 0 0 0-1.238-.48h-1.732v10.37h.984a2.848 2.848 0 0 0 2.242-.872 2.663 2.663 0 0 0 .71-2.24c.067-1.27-.733-2.433-1.968-2.862M23.18 19H17V5.022h6.16c1.17-.144 2.308.431 2.856 1.443a2.673 2.673 0 0 1-.396 3.099l-.75.954c5.177 2.385 3.466 8.295-1.732 8.295" class="b2"/>
+                  <path d="M37.774 5H40l-4.63 14h-3.495L27 5h2.56c1.024 0 1.291.251 1.803 1.925l2.827 8.936L37.774 5z" class="V"/>
+                  <path d="M42.184 13.936l2.08-6.53 2.082 6.53h-4.162zm5.225-7.492C46.889 5.23 46.617 5 45.577 5h-2.873L38 19h2.262l1.04-3.139h5.473L47.815 19H52L47.409 6.444z" class="Fill-a"/>
+              </g>
+          </g>
+      </g>
+  </svg>
 
 
 

@@ -578,6 +578,10 @@ graceful-fs@~1.2.0:
   version "1.2.3"
   resolved "https://globaldevtools.bbva.com:443/artifactory/api/npm/npm-repo/graceful-fs/-/graceful-fs-1.2.3.tgz#15a4806a57547cb2d2dbf27f42e89a8c3451b364"
 
+gulp-rename@^1.4.0:
+  version "1.4.0"
+  resolved "https://globaldevtools.bbva.com:443/artifactory/api/npm/npm-repo/gulp-rename/-/gulp-rename-1.4.0.tgz#de1c718e7c4095ae861f7296ef4f3248648240bd"
+
 gulp-replace@^1.0.0:
   version "1.0.0"
   resolved "https://globaldevtools.bbva.com:443/artifactory/api/npm/npm-repo/gulp-replace/-/gulp-replace-1.0.0.tgz#b32bd61654d97b8d78430a67b3e8ce067b7c9143"
