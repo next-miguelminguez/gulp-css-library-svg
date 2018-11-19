@@ -1,5 +1,5 @@
 {
   "src"      : "./src/svg",
-  "dest"     : "./build/svg",
-  "libname"  : "next-power-svg"
+  "dest"     : "./build",
+  "demo"     : "./src/demo/main.html"
 }

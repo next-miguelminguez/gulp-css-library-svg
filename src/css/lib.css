@@ -1,0 +1,286 @@
+/* CSS library for dictionaries SVG  */
+:root {
+  --next-primary-color: #bd99c7;   /*gold;   */
+  --next-secondary-color: #00a3b6; /*coral;  */
+  --next-gold-color: gold;
+  --next-star-color: coral;
+  --next-stroke-width: 1%;
+  --next-stroke-linear: #fff;
+  --background: #c3c3c3;
+}
+
+body {
+  background-color: var(--background);
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+img {
+  width: 100%;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: hsl(220, 80%, 90%);
+  margin: 0;
+  padding: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows:    repeat(5, auto);
+  grid-template-columns: repeat(3, 33%);
+}
+
+.col {
+  max-width: 1300px;
+  margin: 0 auto 4em;
+}
+
+.grid__item {
+  padding: 1em;
+  margin-bottom: 3em;
+}
+
+
+/*
+
+# Recursos SVG
+https://css-tricks.com/using-svg/
+https://css-tricks.com/svg-sprites-use-better-icon-fonts/
+https://webdesign.tutsplus.com/es/articles/manipulating-svg-icons-with-simple-css--webdesign-15694
+https://fvsch.com/svg-icons/      !!! buena
+https://svgontheweb.com/          !!! tutorial
+
+## Lists the SVG attributes that may be set as CSS properties
+https://www.w3.org/TR/SVG/propidx.html
+
+## Librerias
+https://useiconic.com/
+https://www.heroicons.com/
+*/
+
+
+.nxt-svg__stroke .nxt-svg__item {
+  fill: none;
+  stroke: var(--next-stroke-linear);
+  stroke-width: var(--next-stroke-width);
+}
+.nxt-svg__fill .nxt-svg__item {
+  fill: var(--next-primary-color);
+  stroke: none;
+  stroke-width: var(--next-stroke-width);
+}
+.nxt-svg__goldstar .nxt-svg__item {
+  fill:   var(--next-gold-color); /*gold;   */
+  stroke: var(--next-star-color); /*coral;  */
+  stroke-width: var(--next-stroke-width);
+  stroke-linejoin: round;
+}
+/* Shadow */
+.nxt-svg--shadow .nxt-svg__item {
+  -webkit-filter: drop-shadow(1px 1px 0px var(--next-primary-color));
+  filter: drop-shadow(1px 1px 0px var(--next-primary-color));
+}
+
+/*
+
+---- CSS and SVG mask
+-------------------------
+
+---- INFO
+basic https://css-tricks.com/clipping-masking-css/
+top   https://codepen.io/yoksel/full/fsdbu/
+
+---- SVG
+  <defs>
+    <mask id="nxt-mask--circle">
+      <!-- Everything under a white pixel will be visible -->
+      <circle cx="28" cy="28" r="28"  fill="white" />
+      <!-- Everything under a black pixel will be invisible -->
+      <circle cx="28" cy="28" r="0"  fill="black" />
+    </mask>
+    <clipPath id="nxt-clip--circle">
+      <circle cx="28" cy="28" r="28" />
+      <circle cx="14" cy="14" r="14" />
+    </clipPath>
+  </defs>
+
+---- CSS
+  .nxt-svg__bg--circle {
+    clip-path: url(#nxt-clip--circle);
+  }
+
+*/
+
+
+/* https://css-tricks.com/clipping-masking-css/ */
+/* https://caniuse.com/#search=clip-path */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape */
+
+.nxt-svg__bg--circle .nxt-svg__bg{
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+
+.nxt-svg__bg--round .nxt-svg__bg{
+  -webkit-clip-path: inset(98% 98% 98% 98% round 12px);
+  clip-path: inset(98% 98% 98% 98% round 12px);
+}
+
+.nxt-svg__bg--polygon-next .nxt-svg__bg{
+  -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.nxt-svg__bg--polygon-message .nxt-svg__bg{
+  -webkit-clip-path: polygon(3% 1%, 92% 14%, 100% 85%, 68% 82%, 72% 100%, 50% 79%, 0 73%);
+  clip-path: polygon(3% 1%, 92% 14%, 100% 85%, 68% 82%, 72% 100%, 50% 79%, 0 73%);
+}
+
+.nxt-svg__bg--triangle .nxt-svg__bg{
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.nxt-svg__bg--polygon-inset .nxt-svg__bg{
+  -webkit-clip-path: inset(30% 10% 30% 10% round 60%/40% 0 );
+  clip-path:         inset(30% 10% 30% 10% round 60%/40% 0 );
+}
+
+/*
+Animaciones
+
+Recursos:
+  * http://animista.net/
+  * https://daneden.github.io/animate.css/
+
+*/
+/* Animación clip fondo */
+.nxt-svg__bg--clip-animation .nxt-svg__bg{
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+
+  animation: ntx__clip 3s infinite
+}
+
+@keyframes ntx__clip {
+  0% {
+    clip-path: polygon(100% 50%,84.70057014808336% 54.5684167277018%,91.0518476172854% 60.99980941685713%,82.33578363789503% 63.39392013277814%,93.30127018922194% 75%,77.76736691019323% 71.30665001530522%,80.05203820042827% 80.05203820042827%,71.30665001530522% 77.76736691019323%,75% 93.30127018922192%,63.39392013277814% 82.33578363789503%,60.99980941685714% 91.0518476172854%,54.56841672770181% 84.70057014808336%,50% 100%,45.4315832722982% 84.70057014808336%,39.000190583142874% 91.0518476172854%,36.606079867221865% 82.33578363789505%,25.00000000000001% 93.30127018922194%,28.693349984694787% 77.76736691019323%,19.947961799571733% 80.05203820042827%,22.23263308980677% 71.30665001530522%,6.698729810778076% 75.00000000000001%,17.664216362104966% 63.39392013277815%,8.948152382714603% 60.99980941685715%,15.299429851916635% 54.568416727701816%,0% 50.00000000000001%,15.299429851916635% 45.431583272298205%,8.94815238271459% 39.00019058314288%,17.66421636210496% 36.60607986722188%,6.698729810778062% 25.000000000000014%,22.23263308980676% 28.693349984694787%,19.947961799571715% 19.947961799571747%,28.69334998469477% 22.232633089806775%,24.99999999999998% 6.698729810778083%,36.60607986722184% 17.664216362104973%,39.00019058314284% 8.948152382714603%,45.43158327229816% 15.299429851916642%,49.99999999999999% 0%,54.568416727701795% 15.299429851916635%,60.99980941685711% 8.94815238271459%,63.39392013277812% 17.66421636210496%,74.99999999999997% 6.6987298107780475%,71.3066500153052% 22.23263308980675%,80.05203820042826% 19.947961799571722%,77.76736691019323% 28.69334998469477%,93.30127018922192% 24.99999999999998%,82.33578363789502% 36.60607986722184%,91.0518476172854% 39.00019058314283%,84.70057014808336% 45.43158327229816%);
+  }
+  50% {
+    clip-path: polygon(84.70057014808336% 54.5684167277018%,91.0518476172854% 60.99980941685713%,82.33578363789503% 63.39392013277814%,93.30127018922194% 75%,77.76736691019323% 71.30665001530522%,80.05203820042827% 80.05203820042827%,71.30665001530522% 77.76736691019323%,75% 93.30127018922192%,63.39392013277814% 82.33578363789503%,60.99980941685714% 91.0518476172854%,54.56841672770181% 84.70057014808336%,50% 100%,45.4315832722982% 84.70057014808336%,39.000190583142874% 91.0518476172854%,36.606079867221865% 82.33578363789505%,25.00000000000001% 93.30127018922194%,28.693349984694787% 77.76736691019323%,19.947961799571733% 80.05203820042827%,22.23263308980677% 71.30665001530522%,6.698729810778076% 75.00000000000001%,17.664216362104966% 63.39392013277815%,8.948152382714603% 60.99980941685715%,15.299429851916635% 54.568416727701816%,0% 50.00000000000001%,15.299429851916635% 45.431583272298205%,8.94815238271459% 39.00019058314288%,17.66421636210496% 36.60607986722188%,6.698729810778062% 25.000000000000014%,22.23263308980676% 28.693349984694787%,19.947961799571715% 19.947961799571747%,28.69334998469477% 22.232633089806775%,24.99999999999998% 6.698729810778083%,36.60607986722184% 17.664216362104973%,39.00019058314284% 8.948152382714603%,45.43158327229816% 15.299429851916642%,49.99999999999999% 0%,54.568416727701795% 15.299429851916635%,60.99980941685711% 8.94815238271459%,63.39392013277812% 17.66421636210496%,74.99999999999997% 6.6987298107780475%,71.3066500153052% 22.23263308980675%,80.05203820042826% 19.947961799571722%,77.76736691019323% 28.69334998469477%,93.30127018922192% 24.99999999999998%,82.33578363789502% 36.60607986722184%,91.0518476172854% 39.00019058314283%,84.70057014808336% 45.43158327229816%,100% 50%);
+  }
+   100% {
+    clip-path: polygon(91.0518476172854% 60.99980941685713%,82.33578363789503% 63.39392013277814%,93.30127018922194% 75%,77.76736691019323% 71.30665001530522%,80.05203820042827% 80.05203820042827%,71.30665001530522% 77.76736691019323%,75% 93.30127018922192%,63.39392013277814% 82.33578363789503%,60.99980941685714% 91.0518476172854%,54.56841672770181% 84.70057014808336%,50% 100%,45.4315832722982% 84.70057014808336%,39.000190583142874% 91.0518476172854%,36.606079867221865% 82.33578363789505%,25.00000000000001% 93.30127018922194%,28.693349984694787% 77.76736691019323%,19.947961799571733% 80.05203820042827%,22.23263308980677% 71.30665001530522%,6.698729810778076% 75.00000000000001%,17.664216362104966% 63.39392013277815%,8.948152382714603% 60.99980941685715%,15.299429851916635% 54.568416727701816%,0% 50.00000000000001%,15.299429851916635% 45.431583272298205%,8.94815238271459% 39.00019058314288%,17.66421636210496% 36.60607986722188%,6.698729810778062% 25.000000000000014%,22.23263308980676% 28.693349984694787%,19.947961799571715% 19.947961799571747%,28.69334998469477% 22.232633089806775%,24.99999999999998% 6.698729810778083%,36.60607986722184% 17.664216362104973%,39.00019058314284% 8.948152382714603%,45.43158327229816% 15.299429851916642%,49.99999999999999% 0%,54.568416727701795% 15.299429851916635%,60.99980941685711% 8.94815238271459%,63.39392013277812% 17.66421636210496%,74.99999999999997% 6.6987298107780475%,71.3066500153052% 22.23263308980675%,80.05203820042826% 19.947961799571722%,77.76736691019323% 28.69334998469477%,93.30127018922192% 24.99999999999998%,82.33578363789502% 36.60607986722184%,91.0518476172854% 39.00019058314283%,84.70057014808336% 45.43158327229816%,100% 50%,84.70057014808336% 54.5684167277018%);
+  }
+}
+
+/* Animaciones contenido */
+.nxt-svg__anim--hideshow .nxt-svg__content{
+  animation: hideshow 6s ease infinite;
+}
+
+@keyframes hideshow {
+  0% { opacity: 0; }
+  20% { opacity: 0; }
+  80% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.nxt-svg__anim--kaboom .nxt-svg--anim g {
+  animation: kaboom 2s ease alternate infinite;
+}
+  .nxt-svg__anim--kaboom .nxt-svg--anim g:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .nxt-svg__anim--kaboom .nxt-svg--anim g:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .nxt-svg__anim--kaboom .nxt-svg--anim g:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .nxt-svg__anim--kaboom .nxt-svg--anim g:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+@keyframes kaboom {
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.nxt-svg__anim--bounceInRight .nxt-svg__content {
+  animation: bounceInRight 4s ease alternate infinite;
+}
+
+@keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+.nxt-svg__anim--rotate-center .nxt-svg__content {
+  transform-origin: center center;
+	-webkit-animation: rotate-center 3.9s ease-in-out both  infinite;
+	        animation: rotate-center 3.9s ease-in-out both  infinite;
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+/*
+## Ejemplos locos ??
+Banner animado:  - https://codepen.io/chriscoyier/pen/dvjhn */
+/* texto de mask + fondo animado - https://codepen.io/m_minguezz/pen/vQZdPp      */
+/* hover de botones   - https://codepen.io/m_minguezz/pen/EOXQzg                 */
+/* efecto gallery - https://tympanus.net/Tutorials/CSSMaskTransition/index2.html */
+/* Mascara como marco - https://codepen.io/m_minguezz/pen/bQRLyz                 */
+/* poligonos locos    - https://codepen.io/shshaw/pen/PPEMYX                     */
