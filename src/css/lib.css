@@ -284,3 +284,64 @@ Banner animado:  - https://codepen.io/chriscoyier/pen/dvjhn */
 /* efecto gallery - https://tympanus.net/Tutorials/CSSMaskTransition/index2.html */
 /* Mascara como marco - https://codepen.io/m_minguezz/pen/bQRLyz                 */
 /* poligonos locos    - https://codepen.io/shshaw/pen/PPEMYX                     */
+
+
+
+
+
+
+
+
+
+
+/* Styles micro */
+
+.convert-stroke * {
+  fill: none;
+  stroke: none;
+}
+.convert-stroke .bg .item,
+.convert-stroke .info .item{
+  transform-origin: center center;
+  transform: scale(.95);
+  fill: none;
+  stroke: #333;
+  stroke-width: var(--next-stroke-width);
+}
+
+
+.simple .lines .item{
+  fill: none;
+  stroke: none;
+}
+.simple .bg {
+}
+.simple .shadow {
+  fill: none;
+}
+
+.info .lines .item{
+  fill: none;
+  stroke: none;
+}
+.info .bg {
+  fill: #487cb7;
+}
+.info .shadow {
+  fill: #345c8a;
+}
+.info .info {
+  fill: #c9af3f;
+}
+.info .micro-warning {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.animate .bg {
+  animation: hideshow 2s ease;
+}
+
+.animate .content {
+  animation: bounceInRight 2s ease alternate;
+}
