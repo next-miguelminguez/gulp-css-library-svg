@@ -41,7 +41,8 @@ gulp.task('svgmin', function () {
 gulp.task('copy-css', function(){
   gulp.src(['./src/css/**/*']).pipe(gulp.dest(config.dest + '/css/'));
 });
-gulp.task('demo', ['svgmin'], function () {
+
+gulp.task('demo', ['svgmin'], function() {
   var svgContent = fs.readFileSync(config.dest +"/svg/"+ "next-svg" +'-min.svg', "utf8");
   var svgMicro = fs.readFileSync(config.dest +"/svg/"+ "micro" +'-min.svg', "utf8");
   
